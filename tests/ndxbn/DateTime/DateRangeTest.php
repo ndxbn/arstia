@@ -28,4 +28,21 @@ class DateRangeTest extends \PHPUnit_Framework_TestCase
         }
         $this->assertLessThanOrEqual(1, $counter);
     }
+
+    public function testIterationWithForeach()
+    {
+        $startAt = new \DateTimeImmutable('2000/01/01 11:00:00');
+        $endAt = new \DateTimeImmutable('2000/12/16 11:00:00');
+        $dateRange = new DateRange($startAt, $endAt);
+
+        // this will cursor
+        $expect = new \DateTime('2000/01/01 11:00:00');
+
+        // each days iterator
+        // ATTENTION: NOT SAME `toDatePeriod` method.
+        foreach ($dateRange as $datetime) {
+            $this->assertEquals($expect, $datetime);
+            $expect->add(new \DateInterval('P1D'));
+        }
+    }
 }
