@@ -10,7 +10,7 @@ class DateTimeUtilityTest extends \PHPUnit_Framework_TestCase
     public function testFixToImmutableWithMutable()
     {
         $mutable = new DateTime();
-        $fixed = DateTimeUtility::fixToImmutable($mutable);
+        $fixed = DateTimeUtility::toImmutable($mutable);
 
         $this->assertInstanceOf(DateTimeImmutable::class, $fixed);
 
@@ -23,7 +23,7 @@ class DateTimeUtilityTest extends \PHPUnit_Framework_TestCase
     public function testFixToImmutableWithImmutable()
     {
         $immutable = new DateTimeImmutable();
-        $fixed = DateTimeUtility::fixToImmutable($immutable);
+        $fixed = DateTimeUtility::toImmutable($immutable);
 
         $this->assertInstanceOf(DateTimeImmutable::class, $fixed);
 

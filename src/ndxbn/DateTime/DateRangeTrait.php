@@ -22,8 +22,8 @@ trait DateRangeTrait
      */
     public function __construct(DateTimeInterface $start, DateTimeInterface $end)
     {
-        $this->start = DateTimeUtility::fixToImmutable($start);
-        $this->end = DateTimeUtility::fixToImmutable($end);
+        $this->start = DateTimeUtility::toImmutable($start);
+        $this->end = DateTimeUtility::toImmutable($end);
     }
 
     /**

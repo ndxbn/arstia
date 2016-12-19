@@ -16,7 +16,7 @@ class DateTimeUtility
      *
      * @return DateTimeImmutable
      */
-    public static function fixToImmutable(DateTimeInterface $dateTime)
+    public static function toImmutable(DateTimeInterface $dateTime)
     {
         if ($dateTime instanceof DateTime) {
             $fixed = DateTimeImmutable::createFromMutable($dateTime);
