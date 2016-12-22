@@ -1,6 +1,1 @@
 vendor/
-node_modules/
-
-.env.*.php
-.env.php
-.env
